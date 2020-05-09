@@ -20,10 +20,11 @@ export class AppPluginService {
 
     public loadPlugin(): void {
         this.load('client-a');
-        this.load('client-b');
+        // this.load('client-b');
     }
 
     private load(name: string): void {
+        console.log(`load: ${name}`);
         const configItem = this.config[name];
         if (configItem.loaded) return;
 
