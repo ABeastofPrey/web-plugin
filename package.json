@@ -6,7 +6,6 @@
     "server:pa": "live-server dist/plugin-a",
     "server:pb": "live-server dist/plugin-b",
     "ng": "ng",
-    "copy": "@powershell copy '\\plugins' '\\dist'",
     "start": "ng serve",
     "start:pa": "ng serve --project plugin-a --open",
     "start:pb": "ng serve --project plugin-b --open",
