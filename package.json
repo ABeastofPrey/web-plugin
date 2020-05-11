@@ -4,14 +4,11 @@
   "scripts": {
     "server": "live-server dist",
     "server:pa": "live-server dist/plugin-a",
-    "server:pb": "live-server dist/plugin-b",
     "ng": "ng",
     "start": "ng serve",
     "start:pa": "ng serve --project plugin-a --open",
-    "start:pb": "ng serve --project plugin-b --open",
     "build": "ng build",
     "build:pa": "ng build --prod --project plugin-a --output-hashing none --vendor-chunk false",
-    "build:pb": "ng build --prod --project plugin-b --output-hashing none --vendor-chunk false",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
