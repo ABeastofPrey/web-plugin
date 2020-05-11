@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "server": "live-server dist",
-    "server:pa": "live-server dist/plugin-a",
+    "server:mp": "live-server dist/my-plugin",
     "ng": "ng",
     "start": "ng serve",
-    "start:pa": "ng serve --project plugin-a --open",
+    "start:mp": "ng serve --project my-plugin --open",
     "build": "ng build",
-    "build:pa": "ng build --prod --project plugin-a --output-hashing none --vendor-chunk false",
+    "build:mp": "ng build --prod --project my-plugin",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
