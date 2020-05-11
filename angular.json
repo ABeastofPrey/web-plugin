@@ -144,7 +144,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-plugin",
+            "outputPath": "dist/assets/plugins/my-plugin",
             "index": "projects/my-plugin/src/index.html",
             "main": "projects/my-plugin/src/main.ts",
             "polyfills": "projects/my-plugin/src/polyfills.ts",
@@ -157,7 +157,9 @@
             "styles": [
               "projects/my-plugin/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+            ]
           },
           "configurations": {
             "production": {
