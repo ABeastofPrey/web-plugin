@@ -14,13 +14,15 @@ import { AppComponent } from './app.component';
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [],
+  entryComponents: [AppComponent]
 })
 export class AppModule {
   constructor(private injector: Injector) { }
   
   ngDoBootstrap() {
-    const appEle = createCustomElement(AppComponent, { injector: this.injector });
-    customElements.define('plugin-a', appEle);
+    const appElement = createCustomElement(AppComponent, { injector: this.injector });
+    console.log(appElement)
+    customElements.define('plugin-a', appElement);
   }
 }
