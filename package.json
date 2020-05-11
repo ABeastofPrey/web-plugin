@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "serve": "live-server dist",
-    "serve:mp": "live-server dist-plugins/my-plugin",
+    "serve:mp": "live-server dist/my-plugin",
     "ng": "ng",
     "start": "ng serve",
     "start:mp": "ng serve --project my-plugin --open",
@@ -32,6 +32,8 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^9.1.0",
+    "@angular-builders/dev-server": "^7.3.1",
     "@angular-devkit/build-angular": "~0.900.6",
     "@angular/cli": "~9.0.6",
     "@angular/compiler-cli": "~9.0.6",
@@ -40,6 +42,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "html-webpack-plugin": "^4.3.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
@@ -52,6 +55,7 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "zip-webpack-plugin": "^3.0.0"
   }
 }
