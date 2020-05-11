@@ -144,7 +144,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/assets/plugins/my-plugin",
+            "outputPath": "dist/my-plugin",
             "index": "projects/my-plugin/src/index.html",
             "main": "projects/my-plugin/src/main.ts",
             "polyfills": "projects/my-plugin/src/polyfills.ts",

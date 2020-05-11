@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "serve": "live-server dist",
-    "serve:mp": "live-server dist/my-plugin",
+    "serve:mp": "live-server dist-plugins/my-plugin",
     "ng": "ng",
     "start": "ng serve",
     "start:mp": "ng serve --project my-plugin --open",

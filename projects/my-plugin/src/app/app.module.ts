@@ -22,7 +22,7 @@ export class AppModule {
 
   ngDoBootstrap(): void {
     const appElement = createCustomElement(AppComponent, { injector: this.injector });
-    console.log(appElement);
+    console.log('appElement');
     customElements.define('plugin-component', appElement);
   }
 }

@@ -29,30 +29,21 @@ export class WelcomeComponent implements OnInit {
 
   private loadPluginA(): void {
     const hostElement = document.getElementById('pluginContent');
-    const eleName = 'my-plugin';
+    const eleName = 'plugin-component';
     const element: NgElement & WithProperties<any> = document.createElement(eleName) as any;
 
     const script = document.createElement('script');
-    script.src = 'assets/plugins/my-plugin/main-es5.js';;
-    const scriptt = document.createElement('script');
-    script.src = 'assets/plugins/my-plugin/main-es2015.js';;
+    script.src = 'assets/plugins/my-plugin/main.js';;
 
     const script1 = document.createElement('script');
-    script1.src = 'assets/plugins/my-plugin/runtime-es5.js'
-    const script11 = document.createElement('script');
-    script1.src = 'assets/plugins/my-plugin/runtime-es2015.js'
+    script1.src = 'assets/plugins/my-plugin/runtime.js'
 
     const script2 = document.createElement('script');
-    script2.src = 'assets/plugins/my-plugin/polyfills-es5.js'
-    const script22 = document.createElement('script');
-    script2.src = 'assets/plugins/my-plugin/polyfills-es2015.js'
+    script2.src = 'assets/plugins/my-plugin/polyfills.js'
 
     hostElement.appendChild(script);
     hostElement.appendChild(script1);
     hostElement.appendChild(script2);
-    hostElement.appendChild(scriptt);
-    hostElement.appendChild(script11);
-    hostElement.appendChild(script22);
     hostElement.appendChild(element);
 
     script.onload = () => {
