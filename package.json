@@ -2,8 +2,8 @@
   "name": "plugin-demo",
   "version": "0.0.0",
   "scripts": {
-    "server": "live-server dist",
-    "server:mp": "live-server dist/my-plugin",
+    "serve": "live-server dist",
+    "serve:mp": "live-server dist/my-plugin",
     "ng": "ng",
     "start": "ng serve",
     "start:mp": "ng serve --project my-plugin --open",
