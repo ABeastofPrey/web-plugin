@@ -28,17 +28,19 @@ export class AppPluginService {
         const configItem = this.config[name];
         if (configItem.loaded) return;
 
-        const content = document.getElementById('pluginContent');
+        // const content = document.getElementById('pluginContent');
 
         const script = document.createElement('script');
         script.src = configItem.path;
-        content.appendChild(script);
+        // content.appendChild(script);
+        document.body.appendChild(script);
 
         const element: HTMLElement = document.createElement(configItem.element);
-        content.appendChild(element);
+        // content.appendChild(element);
+        document.body.appendChild(element);
 
-        element.addEventListener('message', (msg: any) => console.debug('shell received message: ', msg.detail));
-        element.setAttribute('state', 'init');
+        // element.addEventListener('message', (msg: any) => console.debug('shell received message: ', msg.detail));
+        // element.setAttribute('state', 'init');
 
         script.onload = () => {
             this.message.create('success', `Plugin loaded.`);

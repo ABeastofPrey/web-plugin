@@ -157,7 +157,7 @@
             "styles": [
               "projects/plugin-a/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@webcomponents/custom-elements/src/native-shim.js"]
           },
           "configurations": {
             "production": {
@@ -221,7 +221,7 @@
             "styles": [
               "projects/plugin-a/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@webcomponents/custom-elements/src/native-shim.js"]
           }
         },
         "lint": {

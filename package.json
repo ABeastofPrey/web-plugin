@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "server": "live-server dist",
-    "server:pa": "live-server dist\\plugin-a",
-    "server:pb": "live-server dist\\plugin-b",
+    "server:pa": "live-server dist/plugin-a",
+    "server:pb": "live-server dist/plugin-b",
     "ng": "ng",
     "copy": "@powershell copy '\\plugins' '\\dist'",
     "start": "ng serve",
