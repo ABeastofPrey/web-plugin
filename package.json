@@ -8,7 +8,7 @@
     "start": "ng serve",
     "start:mp": "ng serve --project plugin -o --extra-webpack-config ./projects/plugin/webpack.partial.js",
     "build": "ng build",
-    "build:mp": "ng build --project plugin --prod --single-bundle true --keep-polyfills --vendor-chunk false --extra-webpack-config ./projects/plugin/webpack.partial.js",
+    "build:mp": "ng build --project plugin --prod --single-bundle true --keep-polyfills true --extra-webpack-config ./projects/plugin/webpack.partial.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

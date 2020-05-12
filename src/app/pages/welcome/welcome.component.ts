@@ -29,20 +29,20 @@ export class WelcomeComponent implements OnInit {
 
   private loadPluginA(): void {
     const hostElement = document.getElementById('pluginContent');
-    const eleName = 'plugin-component';
+    const eleName = 'my-plugin';
     const element: NgElement & WithProperties<any> = document.createElement(eleName) as any;
 
     const script = document.createElement('script');
-    script.src = 'assets/plugins/my-plugin/main.js';;
-
-    const script1 = document.createElement('script');
-    script1.src = 'assets/plugins/my-plugin/runtime.js'
+    script.src = 'assets/plugins/plugin/main-es2015.js';
 
     const script2 = document.createElement('script');
-    script2.src = 'assets/plugins/my-plugin/polyfills.js'
+    script2.src = 'assets/plugins/plugin/polyfills-es2015.js'
+
+    // const script1 = document.createElement('script');
+    // script1.src = 'assets/plugins/plugin/scripts.js'
 
     hostElement.appendChild(script);
-    hostElement.appendChild(script1);
+    // hostElement.appendChild(script1);
     hostElement.appendChild(script2);
     hostElement.appendChild(element);
 
@@ -53,13 +53,6 @@ export class WelcomeComponent implements OnInit {
       this.message.create('error', `Plugin a main.js load failed.`);
     };
 
-    
-    element.onload = () => {
-      this.message.create('success', `Plugin a index.html loaded.`);
-    };
-    element.onerror = () => {
-      this.message.create('error', `Plugin a index.html load failed.`);
-    };
   }
 
 }
