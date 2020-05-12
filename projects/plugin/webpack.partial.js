@@ -9,7 +9,8 @@ module.exports = {
             "VERSION": JSON.stringify("4711")
         }),
         new ZipPlugin({
-            filename: 'plugin.zip'
+            filename: 'plugin.zip',
+            include: ['main.js', 'polyfills.js'],
         })
     ]
 }
