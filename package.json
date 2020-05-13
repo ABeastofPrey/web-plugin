@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "serve": "live-server dist",
-    "serve:mp": "live-server dist/plugin",
+    "serve:mp": "live-server dist-plugin",
     "ng": "ng",
     "start": "ng serve",
     "start:mp": "ng serve --project plugin -o --extra-webpack-config ./projects/plugin/webpack.partial.js",
     "build": "ng build",
+    "build:p": "npm run build:mp && npm run gulp:mp",
     "build:mp": "ng build --project plugin --prod --single-bundle true --keep-polyfills true --extra-webpack-config ./projects/plugin/webpack.partial.js",
     "gulp:mp": "gulp zip_plugin",
     "test": "ng test",

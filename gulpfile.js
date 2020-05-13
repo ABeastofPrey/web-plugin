@@ -3,9 +3,9 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 //用gulp建立一个搬砖任务
 gulp.task('zip_plugin', function () {
-    return gulp.src('projects/plugin/dist/*.js').pipe(
-        concat('all.js')
+    return gulp.src('dist-plugin/*.js').pipe(
+        concat('plugin.js')
     ).pipe(
-        gulp.dest('js')
+        gulp.dest('dist-plugin')
     );
 });

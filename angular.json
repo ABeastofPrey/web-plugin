@@ -146,7 +146,7 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/plugin",
+            "outputPath": "dist-plugin",
             "index": "projects/plugin/src/index.html",
             "main": "projects/plugin/src/main.ts",
             "polyfills": "projects/plugin/src/polyfills.ts",

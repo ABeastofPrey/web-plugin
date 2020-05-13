@@ -33,7 +33,7 @@ export class WelcomeComponent implements OnInit {
     const element: NgElement & WithProperties<any> = document.createElement(eleName) as any;
 
     const script = document.createElement('script');
-    script.src = 'assets/plugins/main.js';
+    script.src = 'assets/plugins/plugin.js';
 
     // const script2 = document.createElement('script');
     // script2.src = 'assets/plugins/plugin/polyfills.js'
