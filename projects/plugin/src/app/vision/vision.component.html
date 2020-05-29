@@ -1,1 +1,24 @@
-<p>Plug-in Vision works!</p>
+<div>
+    <p>Plug-in Vision works!</p>
+    <mat-tab-group>
+        <mat-tab label="{{'vision.templateConfigTab' | translate}}">
+            <ng-template matTabContent>
+                <app-vision-template-config></app-vision-template-config>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="{{'vision.calibrationTab' | translate}}">
+            <ng-template matTabContent>
+                <app-vision-calibration></app-vision-calibration>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+<hr />
+<!-- <div class="example-button-row">
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+</div> -->

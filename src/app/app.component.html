@@ -1,4 +1,11 @@
-<button (click)="loadPlugin()">Load Plugin</button> 
+<button mat-button color="primary" (click)="loadPlugin()">Load Plugin</button>
 <hr />
 <div id="pluginHost"></div>
 <router-outlet></router-outlet>
+<div class="example-button-row">
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+</div>

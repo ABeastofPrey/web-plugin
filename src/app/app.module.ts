@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppPluginService } from './app.plugin.service';
 
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,9 +17,10 @@ import { AppPluginService } from './app.plugin.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    // FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [
     AppPluginService,
