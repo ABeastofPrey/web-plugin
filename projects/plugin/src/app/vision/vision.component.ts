@@ -1,9 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-interface WebsocketService {
-    query: (api: string) => Promise<any>;
-}
-
 @Component({
     // selector: 'plugin-vision',
     templateUrl: './vision.component.html',
@@ -12,20 +8,15 @@ interface WebsocketService {
 export class VisionComponent implements OnInit {
     @Input() name: string = 'Init value';
     @Output() nameChange: EventEmitter<string> = new EventEmitter<string>();
-    @Input() websocketService: WebsocketService;
+    @Input() queryResponse: string;
+    @Output('query-event') queryEvent: EventEmitter<string> = new EventEmitter<string>();
     constructor() { }
 
     ngOnInit(): void { }
 
     public vTran(): void {
         const api = '?scara.VTran';
-        if (this.websocketService !== undefined) {
-            this.websocketService.query(api).then(res => {
-                console.log('=======================================');
-                console.log(res);
-            });
-        } else {
-            console.log('websocketService is undefined');
-        }
+        this.nameChange.emit('new name');
+        this.queryEvent.emit(api);
     }
 }

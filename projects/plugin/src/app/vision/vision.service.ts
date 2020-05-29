@@ -4,9 +4,10 @@ import { MatDialog } from '@angular/material/dialog';
 // import { NewDialogTemplateComponent } from '../components/new-dialog-template/new-dialog-template.component';
 import { Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-// import { CreateDialogReturn, CreateDialog, ConfirmDialog } from './vision.enum';
+import { CreateDialogReturn, CreateDialog, ConfirmDialog } from './vision.enum';
 // import { YesNoDialogComponent } from '../../../components/yes-no-dialog/yes-no-dialog.component';
 
+import { of } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -24,51 +25,62 @@ export class VisionService {
         // });
     }
 
-    // debounceVload(api: string): void {
-    //     this.searchEvent.next(api);
-    // }
+    debounceVload(api: string): void {
+        this.searchEvent.next(api);
+    }
 
-    // search(api: string): Promise<any> {
-    //     return this.ws.query(api);
-    // }
+    search(api: string): Promise<any> {
+        return Promise.reject([]);
+        // return this.ws.query(api);
+    }
 
-    // createDialog(data: CreateDialog): Observable<CreateDialogReturn> {
-    //     return this.dialogs.open(NewDialogTemplateComponent, data).afterClosed();
-    // }
+    createDialog(data: CreateDialog): Observable<CreateDialogReturn> {
+        // return this.dialogs.open(NewDialogTemplateComponent, data).afterClosed();
+        return of({
+            name: 'name',
+            status: true
+        });
+    }
 
-    // yesnoDialog(data: ConfirmDialog): Observable<boolean> {
-    //     return this.dialogs.open(YesNoDialogComponent, { data: data }).afterClosed();
+    yesnoDialog(data: ConfirmDialog): Observable<boolean> {
+        // return this.dialogs.open(YesNoDialogComponent, { data: data }).afterClosed();
+        return of(true);
+    }
 
-    // }
+    setCurrentStation(station: string): Promise<any> {
+        let api: string = `setCurrentStation("${station}")`;
+        // return this.ws.query(api);
+        return Promise.reject();
+    }
 
-    // setCurrentStation(station: string): Promise<any> {
-    //     let api: string = `setCurrentStation("${station}")`;
-    //     return this.ws.query(api);
-    // }
+    getCurrentStation(): Promise<any> {
+        let api: string = `?getCurrentStation`;
+        return Promise.reject([]);
+        // return this.ws.query(api);
+    }
 
-    // getCurrentStation(): Promise<any> {
-    //     let api: string = `?getCurrentStation`;
-    //     return this.ws.query(api);
-    // }
+    setCurrentJob(station: string, job: string): Promise<any> {
+        let api: string = `setCurrentJob("${station}","${job}")`;
+        // return this.ws.query(api);
+        return Promise.reject([]);
+    }
 
-    // setCurrentJob(station: string, job: string): Promise<any> {
-    //     let api: string = `setCurrentJob("${station}","${job}")`;
-    //     return this.ws.query(api);
-    // }
+    getCurrentJob(station: string): Promise<any> {
+        let api: string = `?getCurrentJob("${station}")`;
+        // return this.ws.query(api);
+        return Promise.reject([]);
+    }
 
-    // getCurrentJob(station: string): Promise<any> {
-    //     let api: string = `?getCurrentJob("${station}")`;
-    //     return this.ws.query(api);
-    // }
+    setCurrentCalStation(station: string): Promise<any> {
+        let api: string = `setCurrentCalStation("${station}")`;
+        // return this.ws.query(api);
+        return Promise.reject([]);
+    }
 
-    // setCurrentCalStation(station: string): Promise<any> {
-    //     let api: string = `setCurrentCalStation("${station}")`;
-    //     return this.ws.query(api);
-    // }
-
-    // getCurrentCalStation(): Promise<any> {
-    //     let api: string = `?getCurrentCalStation`;
-    //     return this.ws.query(api);
-    // }
+    getCurrentCalStation(): Promise<any> {
+        let api: string = `?getCurrentCalStation`;
+        // return this.ws.query(api);
+        return Promise.reject([]);
+    }
 
 }

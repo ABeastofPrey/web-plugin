@@ -1,4 +1,4 @@
-<!-- <div class="mat-typography vision">
+<div class="mat-typography vision">
     <div class="mat-elevation-z3 create">
         <div>
             <button mat-raised-button color="primary" class="btn-create" (click)="create()"
@@ -17,20 +17,23 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <div><button mat-raised-button color="warn" *ngIf="stationName"
-                (click)="confirmDelete()">{{'vision.templateConfig.delete' | translate}}</button></div>
+        <div>
+            <button mat-raised-button color="warn" *ngIf="stationName"
+                (click)="confirmDelete()">{{'vision.templateConfig.delete' | translate}}
+            </button>
+        </div>
     </div>
     <div class="edit" *ngIf="stationName">
         <div class="box">
             <header>
                 <div class="config">
                     <span class="half">
-                        <app-ip-address [ip]="ip" (changeIpEmit)="changeIp($event)"></app-ip-address>
+                        <!-- <app-ip-address [ip]="ip" (changeIpEmit)="changeIp($event)"></app-ip-address> -->
                     </span>
                     <span class="right">
-                        <cs-number-input type="int" [label]="'vision.templateConfig.port' | translate"
+                        <!-- <cs-number-input type="int" [label]="'vision.templateConfig.port' | translate"
                             [rightClosedInterval]="true" [(value)]="port.value" [min]="0" [max]="65535"
-                            (blur)="portBlur()" (isValidEvent)="changePort($event)" [required]="true"></cs-number-input>
+                            (blur)="portBlur()" (isValidEvent)="changePort($event)" [required]="true"></cs-number-input> -->
                     </span>
                 </div>
                 <div class="config">
@@ -58,13 +61,9 @@
             </header>
             <div class="dividing"></div>
             <footer>
-                <app-vision-template-config-right [stationName]="stationName" [typeList]="typeList" #visionRight>
-                </app-vision-template-config-right>
+                <!-- <app-vision-template-config-right [stationName]="stationName" [typeList]="typeList" #visionRight>
+                </app-vision-template-config-right> -->
             </footer>
         </div>
     </div>
-</div> -->
-
-<p>
-    vision-template-config works
-</p>
+</div>

@@ -6,6 +6,7 @@ gulp.task('zip_plugin', function () {
     return gulp.src('dist-plugin/*.js').pipe(
         concat('plugin.js')
     ).pipe(
-        gulp.dest('dist-plugin')
+        // gulp.dest('dist-plugin')
+        gulp.dest('src/assets/plugins')
     );
 });

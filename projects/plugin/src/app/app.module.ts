@@ -9,10 +9,13 @@ import { VisionTemplateConfigComponent } from './vision/vision-template-config/v
 import { VisionCalibrationComponent } from './vision/vision-calibration/vision-calibration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
+
 import { NgElement, WithProperties } from '@angular/elements';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { NgElement, WithProperties } from '@angular/elements';
     AppRoutingModule,
     TranslateModule.forRoot(),
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [],
@@ -44,11 +49,11 @@ export class AppModule {
     const visionEle = createCustomElement(VisionComponent, { injector: this.injector });
     customElements.define('plugin-vision', visionEle);
 
-    // setTimeout(() => {
-    //   const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
-    //   myPlugin.name = 'Hello vision';
-    //   myPlugin.websocketService = { query: () => Promise.resolve('haha') };
-    //   document.body.appendChild(myPlugin);
-    // }, 50);
+    setTimeout(() => {
+      if (environment.production) return;
+      const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
+      myPlugin.name = 'Hello vision';
+      document.body.appendChild(myPlugin);
+    }, 50);
   }
 }

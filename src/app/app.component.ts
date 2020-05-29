@@ -17,13 +17,13 @@ export class AppComponent {
 		mpScript.src = 'assets/plugins/plugin.js';
 		hostElement.appendChild(mpScript);
 
-		const visionPlugin = document.createElement('plugin-vision') as any;
+		const visionPlugin = document.createElement('plugin-vision')as HTMLElement;
 		visionPlugin.setAttribute('name', 'Hello vision plugin');
-		visionPlugin.setAttribute('websocket-service', { query: function(api)  {
-			return Promise.resolve('hahaha');
-		}});
+		visionPlugin.addEventListener('query-event', function(event: CustomEvent) {
+			console.log(event.detail);
+			visionPlugin.setAttribute('name', 'Query result');
+		});
 		hostElement.appendChild(visionPlugin);
-
 		this.loaded = true;
 	}
 }
