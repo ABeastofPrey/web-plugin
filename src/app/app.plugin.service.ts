@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Injectable()
 export class AppPluginService {
@@ -16,7 +15,7 @@ export class AppPluginService {
         },
     };
 
-    constructor(private message: NzMessageService) { }
+    constructor() { }
 
     public loadPlugin(): void {
         this.load('client-a');
@@ -43,10 +42,10 @@ export class AppPluginService {
         // element.setAttribute('state', 'init');
 
         script.onload = () => {
-            this.message.create('success', `Plugin loaded.`);
+           console.log('success', `Plugin loaded.`);
         };
         script.onerror = () => {
-            this.message.create('error', `Plugin load failed.`);
+           console.log('error', `Plugin load failed.`);
         };
 
 

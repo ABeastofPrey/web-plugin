@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { NgElement, WithProperties } from '@angular/elements';
 
 @Component({
 	selector: 'app-root',
@@ -7,10 +7,30 @@ import { Router, ActivatedRoute } from '@angular/router';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	isCollapsed = false;
-	constructor(private router: Router, private route: ActivatedRoute) { }
-	public jumpTo(): void {
-		// this.router.navigate(['/'], { fragment: '#/client-a/page1' });
-		window.location.href = `http://localhost:4200/#/client-a/page1`
+	constructor() { }
+
+	public loadPlugin(): void {
+		this.loadPluginA();
+	}
+
+	private loadPluginA(): void {
+	  const hostElement = document.getElementById('pluginHost');
+	  const eleName = 'my-plugin';
+	  const element: NgElement & WithProperties<any> = document.createElement(eleName) as any;
+	  const script = document.createElement('script');
+	  script.src = 'assets/plugins/plugin.js';
+	  hostElement.appendChild(script);
+	  hostElement.appendChild(element);
+  
+	  // script.onload = () => {
+	  //   this.message.create('success', `Plugin a main.js loaded.`);
+	  // };
+	  // script.onerror = () => {
+	  //   this.message.create('error', `Plugin a main.js load failed.`);
+	  // };
+  
+	  const visionPlugin = document.createElement('plugin-vision') as any;
+	  hostElement.appendChild(visionPlugin);
+	  
 	}
 }
