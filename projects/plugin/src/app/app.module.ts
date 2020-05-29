@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VisionComponent } from './vision/vision.component';
@@ -21,6 +22,7 @@ import { MatTabsModule } from '@angular/material/tabs';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     TranslateModule.forRoot(),
@@ -28,17 +30,15 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTabsModule
   ],
   providers: [],
-  bootstrap: [],
-  entryComponents: [AppComponent, VisionComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [VisionComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) { }
+  constructor(private injector: Injector) {
+    this.ngDoBootstrap();
+  }
 
   ngDoBootstrap() {
-    console.log('Define custom plugin element');
-    const appEle = createCustomElement(AppComponent, { injector: this.injector });
-    customElements.define('my-plugin', appEle);
-
     const visionEle = createCustomElement(VisionComponent, { injector: this.injector });
     customElements.define('plugin-vision', visionEle);
   }

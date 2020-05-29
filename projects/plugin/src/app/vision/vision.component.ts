@@ -10,15 +10,12 @@ interface WebsocketService {
     styleUrls: ['./vision.component.scss']
 })
 export class VisionComponent implements OnInit {
-    @Input() value: string = 'Init value';
-    @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
+    @Input() name: string = 'Init value';
+    @Output() nameChange: EventEmitter<string> = new EventEmitter<string>();
     @Input() websocketService: WebsocketService;
-    constructor() { 
+    constructor() { }
 
-    }
-
-    ngOnInit(): void {
-    }
+    ngOnInit(): void { }
 
     public vTran(): void {
         const api = '?scara.VTran';

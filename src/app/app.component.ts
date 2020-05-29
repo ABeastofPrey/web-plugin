@@ -31,6 +31,8 @@ export class AppComponent {
   
 	  const visionPlugin = document.createElement('plugin-vision') as any;
 	  hostElement.appendChild(visionPlugin);
+	  console.log(visionPlugin)
+	  visionPlugin.value = 'hello'
 	  
 	}
 }
