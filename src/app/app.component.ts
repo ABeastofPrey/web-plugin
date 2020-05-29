@@ -10,29 +10,15 @@ export class AppComponent {
 	constructor() { }
 
 	public loadPlugin(): void {
-		this.loadPluginA();
-	}
+		const hostElement = document.getElementById('pluginHost');
+		const visionPlugin = document.createElement('plugin-vision') as any;
+		const mpScript = document.createElement('script');
+		mpScript.src = 'assets/plugins/plugin.js';
 
-	private loadPluginA(): void {
-	  const hostElement = document.getElementById('pluginHost');
-	  const eleName = 'my-plugin';
-	  const element: NgElement & WithProperties<any> = document.createElement(eleName) as any;
-	  const script = document.createElement('script');
-	  script.src = 'assets/plugins/plugin.js';
-	  hostElement.appendChild(script);
-	  hostElement.appendChild(element);
-  
-	  // script.onload = () => {
-	  //   this.message.create('success', `Plugin a main.js loaded.`);
-	  // };
-	  // script.onerror = () => {
-	  //   this.message.create('error', `Plugin a main.js load failed.`);
-	  // };
-  
-	  const visionPlugin = document.createElement('plugin-vision') as any;
-	  hostElement.appendChild(visionPlugin);
-	  console.log(visionPlugin)
-	  visionPlugin.value = 'hello'
-	  
+		visionPlugin.name = 'Hello vision plugin';
+		visionPlugin.websocketService = { query: () => Promise.resolve('awsome') };
+
+		hostElement.appendChild(mpScript);
+		hostElement.appendChild(visionPlugin);
 	}
 }

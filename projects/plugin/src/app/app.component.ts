@@ -16,11 +16,10 @@ export class AppComponent {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
 
-    setTimeout(() => {
-      const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
-      myPlugin.name = 'Hello vision';
-      myPlugin.websocketService = { query: () => Promise.resolve('haha') };
-      document.body.appendChild(myPlugin);
-    }, 500);
+    
+    const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
+    myPlugin.name = 'Hello vision';
+    myPlugin.websocketService = { query: () => Promise.resolve('haha') };
+    document.body.appendChild(myPlugin);
   }
 }
