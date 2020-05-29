@@ -6,7 +6,7 @@
     "serve:mp": "live-server dist-plugin",
     "ng": "ng",
     "start": "ng serve",
-    "start:mp": "ng serve --project plugin -o --port 4300 --extra-webpack-config ./projects/plugin/webpack.partial.js",
+    "start:p": "ng serve --project plugin -o --port 4300 --extra-webpack-config ./projects/plugin/webpack.partial.js",
     "build": "ng build",
     "build:p": "npm run build:mp && npm run gulp:mp",
     "build:mp": "ng build --project plugin --prod --single-bundle true --keep-polyfills true --extra-webpack-config ./projects/plugin/webpack.partial.js",

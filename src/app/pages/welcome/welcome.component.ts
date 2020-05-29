@@ -31,28 +31,21 @@ export class WelcomeComponent implements OnInit {
     const hostElement = document.getElementById('pluginContent');
     const eleName = 'my-plugin';
     const element: NgElement & WithProperties<any> = document.createElement(eleName) as any;
-
     const script = document.createElement('script');
     script.src = 'assets/plugins/plugin.js';
-
-    // const script2 = document.createElement('script');
-    // script2.src = 'assets/plugins/plugin/polyfills.js'
-
-    // const script1 = document.createElement('script');
-    // script1.src = 'assets/plugins/plugin/scripts.js'
-
     hostElement.appendChild(script);
-    // hostElement.appendChild(script1);
-    // hostElement.appendChild(script2);
     hostElement.appendChild(element);
 
-    script.onload = () => {
-      this.message.create('success', `Plugin a main.js loaded.`);
-    };
-    script.onerror = () => {
-      this.message.create('error', `Plugin a main.js load failed.`);
-    };
+    // script.onload = () => {
+    //   this.message.create('success', `Plugin a main.js loaded.`);
+    // };
+    // script.onerror = () => {
+    //   this.message.create('error', `Plugin a main.js load failed.`);
+    // };
 
+    const visionPlugin = document.createElement('plugin-vision') as any;
+    hostElement.appendChild(visionPlugin);
+    
   }
 
 }

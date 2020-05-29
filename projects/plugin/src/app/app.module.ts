@@ -3,10 +3,12 @@ import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VisionComponent } from './vision/vision.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VisionComponent
   ],
   imports: [
     BrowserModule,
@@ -14,14 +16,17 @@ import { AppComponent } from './app.component';
   ],
   providers: [],
   bootstrap: [],
-  entryComponents: [AppComponent]
+  entryComponents: [AppComponent, VisionComponent]
 })
 export class AppModule {
   constructor(private injector: Injector) { }
 
   ngDoBootstrap() {
-    const appEle = createCustomElement(AppComponent, { injector: this.injector });
     console.log('Define custom plugin element');
+    const appEle = createCustomElement(AppComponent, { injector: this.injector });
     customElements.define('my-plugin', appEle);
+    
+    const visionEle = createCustomElement(VisionComponent, { injector: this.injector });
+    customElements.define('plugin-vision', visionEle);
   }
 }
