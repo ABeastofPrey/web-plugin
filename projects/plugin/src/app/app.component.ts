@@ -17,9 +17,9 @@ export class AppComponent {
     //Add 'implements AfterViewInit' to the class.
 
     
-    const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
-    myPlugin.name = 'Hello vision';
-    myPlugin.websocketService = { query: () => Promise.resolve('haha') };
-    document.body.appendChild(myPlugin);
+    // const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
+    // myPlugin.name = 'Hello vision';
+    // myPlugin.websocketService = { query: () => Promise.resolve('haha') };
+    // document.body.appendChild(myPlugin);
   }
 }

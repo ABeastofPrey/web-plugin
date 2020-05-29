@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
+import { NgElement, WithProperties } from '@angular/elements';
 
 @NgModule({
   declarations: [
@@ -30,16 +31,24 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTabsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
   entryComponents: [VisionComponent]
 })
 export class AppModule {
   constructor(private injector: Injector) {
-    this.ngDoBootstrap();
+    // this.ngDoBootstrap();
   }
 
   ngDoBootstrap() {
+    console.log('define plugin-vision')
     const visionEle = createCustomElement(VisionComponent, { injector: this.injector });
     customElements.define('plugin-vision', visionEle);
+
+    // setTimeout(() => {
+    //   const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
+    //   myPlugin.name = 'Hello vision';
+    //   myPlugin.websocketService = { query: () => Promise.resolve('haha') };
+    //   document.body.appendChild(myPlugin);
+    // }, 50);
   }
 }
