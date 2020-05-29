@@ -8,9 +8,9 @@ module.exports = {
         new webpack.DefinePlugin({
             "VERSION": JSON.stringify("4711")
         }),
-        new ZipPlugin({
-            filename: 'plugin.zip',
-            include: ['main.js', 'polyfills.js'],
-        })
+        // new ZipPlugin({
+        //     filename: 'plugin.zip',
+        //     include: ['main.js', 'polyfills.js'],
+        // })
     ]
 }

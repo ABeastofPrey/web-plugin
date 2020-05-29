@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "serve": "live-server dist",
-    "serve:mp": "live-server dist-plugin",
+    "serve:p": "live-server dist-plugin",
     "ng": "ng",
     "start": "ng serve",
     "start:p": "ng serve --project plugin -o --port 4300 --extra-webpack-config ./projects/plugin/webpack.partial.js",
