@@ -32,7 +32,6 @@ export class NewDialogTemplateComponent implements OnInit {
     }
 
     private validExist(name: FormControl) {
-        console.log(this.data.stationList)
         return () => {
             let stationList: string[] = this.data ? this.data.stationList : [];
             let existList = stationList.filter((value) => {

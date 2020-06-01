@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { WebsocketService } from '../common-services/websocket.service';
 
 @Component({
     // selector: 'plugin-vision',
@@ -10,9 +11,19 @@ export class VisionComponent implements OnInit {
     @Output() nameChange: EventEmitter<string> = new EventEmitter<string>();
     @Input() queryResponse: string;
     @Output('query-event') queryEvent: EventEmitter<string> = new EventEmitter<string>();
-    constructor() { }
+    constructor(private websocketService: WebsocketService) { }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+        this.queryEvent.subscribe(queryObj => {
+            const { id, api } = JSON.parse(queryObj);
+            console.log(id, api);
+            setTimeout(() => {
+                const resObj = { id, res: '0' };
+                this.websocketService.onResponse.emit(resObj)
+            }, 1000);
+        });
+        this.websocketService.rigisterQueryEvents(this.queryEvent);
+    }
 
     public vTran(): void {
         const api = '?scara.VTran';
