@@ -1,18 +1,24 @@
 <div class="plugin-vision">
     <mat-tab-group>
-        <mat-tab label="{{'vision.templateConfigTab' | translate}}">
+        <mat-tab label="Template Config">
             <ng-template matTabContent>
-                <app-vision-template-config></app-vision-template-config>
+                <div class="tab-container">
+                    <plugin-vision-navigator></plugin-vision-navigator>
+                    <app-vision-template-config></app-vision-template-config>
+                </div>
             </ng-template>
         </mat-tab>
-        <mat-tab label="{{'vision.calibrationTab' | translate}}">
+        <mat-tab label="Calibration">
             <ng-template matTabContent>
-                <app-vision-calibration></app-vision-calibration>
+                <div class="tab-container">
+                    <plugin-vision-navigator [canEdit]="false"></plugin-vision-navigator>
+                    <app-vision-calibration></app-vision-calibration>
+                </div>
             </ng-template>
         </mat-tab>
     </mat-tab-group>
-    <hr />
+    <!-- <hr />
     <p>Query response: {{queryResponse}}</p>
     <input [(ngModel)]="name" />
-    <button mat-raised-button color="primary" (click)="vTran()">VTran</button>
+    <button mat-raised-button color="primary" (click)="vTran()">VTran</button> -->
 </div>

@@ -1,0 +1,13 @@
+<div class="vision-navigator">
+    <button *ngIf="canEdit" mat-raised-button color="primary" (click)="create()">
+        +Create
+    </button>
+    <mat-form-field>
+        <mat-select [disableOptionCentering]="true" placeholder="Selected Station">
+            <mat-option value="Op1">
+                Op1
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button *ngIf="canEdit" mat-raised-button color="warn">-Delete</button>
+</div>
