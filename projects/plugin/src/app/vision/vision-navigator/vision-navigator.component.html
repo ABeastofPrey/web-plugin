@@ -3,9 +3,13 @@
         +Create
     </button>
     <mat-form-field>
-        <mat-select [disableOptionCentering]="true" placeholder="Selected Station">
-            <mat-option value="Op1">
-                Op1
+        <mat-select 
+            [disableOptionCentering]="true"
+            [(value)]="station"
+            (selectionChange)="changeStation()"
+            placeholder="Selected Station">
+            <mat-option *ngFor="let station of stationList" [value]="station">
+                {{station}}
             </mat-option>
         </mat-select>
     </mat-form-field>

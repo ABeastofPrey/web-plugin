@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, Validators } from '@angular/forms';
-// import { List, DialogValue } from '../../services/vision.enum';
+import { List, CreateDialogData } from '../../vision/vision.enum';
 import { WebsocketService } from '../../common-services/websocket.service';
 @Component({
     selector: 'app-new-dialog-template',
@@ -13,7 +13,7 @@ export class NewDialogTemplateComponent implements OnInit {
     constructor(
         public dialogRef: MatDialogRef<NewDialogTemplateComponent>,
         private ws: WebsocketService,
-        @Inject(MAT_DIALOG_DATA) public data: any
+        @Inject(MAT_DIALOG_DATA) public data: CreateDialogData
     ) { }
 
     public name: FormControl = new FormControl('');
@@ -22,17 +22,17 @@ export class NewDialogTemplateComponent implements OnInit {
     ngOnInit() {
         let vaild = [Validators.required, this.validFirstLetter(this.name), this.validExist(this.name)]
         this.name.setValidators(vaild);
-
     }
 
-    validFirstLetter(name: FormControl) {
+    private validFirstLetter(name: FormControl) {
         return () => {
             let reg = /^[a-zA-Z]/;
             return (reg.test(name.value) ? null : { "letter": "letter" })
         }
     }
 
-    validExist(name: FormControl) {
+    private validExist(name: FormControl) {
+        console.log(this.data.stationList)
         return () => {
             let stationList: string[] = this.data ? this.data.stationList : [];
             let existList = stationList.filter((value) => {
@@ -42,7 +42,7 @@ export class NewDialogTemplateComponent implements OnInit {
         }
     }
 
-    changeInput(e: any): void {
+    public changeInput(e: any): void {
         const [validName] = e.target.value.match(/[a-zA-Z0-9_]*/g);
         const name: string = validName.slice(0, 32);
         this.name.patchValue(name);

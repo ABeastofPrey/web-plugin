@@ -8,7 +8,7 @@ export class WebsocketService {
 
     public query(api: string): Promise<any> {
         console.log(api)
-        return Promise.resolve('query response');
+        return Promise.resolve({ result: '0' });
     }
 
     public simpleQuery(api: string): Observable<any> {
