@@ -7,8 +7,6 @@ import { WebsocketService } from '../common-services/websocket.service';
     styleUrls: ['./vision.component.scss']
 })
 export class VisionComponent implements OnInit {
-    @Input() name: string = 'Init value';
-    @Output() nameChange: EventEmitter<string> = new EventEmitter<string>();
     @Input() queryResponse: string;
     @Output('query-event') queryEvent: EventEmitter<string> = new EventEmitter<string>();
     constructor(private websocketService: WebsocketService) { }
@@ -23,11 +21,5 @@ export class VisionComponent implements OnInit {
             }, 1000);
         });
         this.websocketService.rigisterQueryEvents(this.queryEvent);
-    }
-
-    public vTran(): void {
-        const api = '?scara.VTran';
-        this.nameChange.emit('new name');
-        this.queryEvent.emit(api);
     }
 }

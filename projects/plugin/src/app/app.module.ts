@@ -53,7 +53,6 @@ export class AppModule {
     setTimeout(() => {
       if (environment.production) return;
       const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
-      myPlugin.name = 'Hello vision';
       document.body.appendChild(myPlugin);
     }, 50);
   }
