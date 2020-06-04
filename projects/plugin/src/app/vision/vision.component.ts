@@ -18,7 +18,6 @@ export class VisionComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes['queryResponse'].currentValue);
         (({ queryResponse }) => {
             if (isUndefined(queryResponse)) return;
             const resObj = compose(JSON.parse, prop('currentValue'))(queryResponse);

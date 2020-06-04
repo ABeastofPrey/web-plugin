@@ -50,8 +50,8 @@ export class NewDialogTemplateComponent implements OnInit {
 
     insert(): void {
         let addStation = `?AddStation("${this.name.value}")`;
-        this.ws.query(addStation).then((result: any) => {
-            if (result.result === "0") {
+        this.ws.query(addStation).then((result: string) => {
+            if (result === "0") {
                 this.close(true)
             } else {
                 this.close(false);
