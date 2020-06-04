@@ -53,6 +53,14 @@ export class AppModule {
     setTimeout(() => {
       if (environment.production) return;
       const myPlugin: NgElement & WithProperties<VisionComponent> = document.createElement('plugin-vision') as any;
+      myPlugin.addEventListener('query-event', (para: CustomEvent) => {
+        const { id, api } = JSON.parse(para.detail);
+        // console.log(id, api);
+        setTimeout(() => {
+          const resObj = { id, res: '0' };
+          myPlugin.setAttribute('query-response', JSON.stringify(resObj));
+        }, 500);
+      });
       document.body.appendChild(myPlugin);
     }, 50);
   }
