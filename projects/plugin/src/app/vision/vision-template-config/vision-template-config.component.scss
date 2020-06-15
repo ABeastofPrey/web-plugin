@@ -1,0 +1,21 @@
+.vision-config {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+        border: fuchsia 1px solid;
+        flex-grow: 1;
+        margin: 5px;
+    }
+    div:nth-child(1) {
+        
+    }
+    div:nth-child(2) {
+        background: green;
+    }
+    div:nth-child(3) {
+        background: yellowgreen;
+    }
+}

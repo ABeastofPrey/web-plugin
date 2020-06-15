@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NewDialogTemplateComponent } from '../../common-comps/new-dialog-template/new-dialog-template.component';
-
+import { VisionService } from '../vision.service';
 
 @Component({
     selector: 'plugin-vision-navigator',
@@ -12,7 +12,7 @@ export class VisionNavigatorComponent implements OnInit {
     @Input() canEdit = true;
     public stationList: string[] = [];
     public station: string = '';
-    constructor(private dialog: MatDialog) { }
+    constructor(private dialog: MatDialog, private service: VisionService) { }
 
     ngOnInit(): void { }
 
@@ -27,11 +27,12 @@ export class VisionNavigatorComponent implements OnInit {
             if (created && created.status) {
                 this.stationList.push(created.name);
                 this.station = created.name;
+                this.service.stationChange.emit(this.station);
             }
         });
     }
 
     public changeStation(): void {
-        console.log(this.station)
+        this.service.stationChange.emit(this.station);
     }
 }

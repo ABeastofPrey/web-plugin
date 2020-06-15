@@ -1,1 +1,21 @@
-<p>app-vision-template-config</p>
+<div class="vision-config">
+    <div>
+        <app-ip-address [ip]="ip" (changeIpEmit)="changeIp($event)"></app-ip-address>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Port</mat-label>
+                <input matInput [value]="port">
+            </mat-form-field>
+        </form>
+        <mat-form-field>
+            <mat-label>Terminator</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let t of terminators" [value]="t">
+                    {{t}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div></div>
+    <div></div>
+</div>

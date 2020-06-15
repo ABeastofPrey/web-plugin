@@ -10,7 +10,7 @@ import { of } from 'rxjs';
     providedIn: 'root'
 })
 export class VisionService {
-
+    public stationChange: EventEmitter<string> = new EventEmitter<string>();
     private searchEvent: EventEmitter<string> = new EventEmitter<string>();
 
     constructor(
